@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 interface Props {
     ariaLabel: string,
@@ -10,9 +11,11 @@ const Navigation: React.FC<Props> = ({ ariaLabel, items }) => {
         return null;
     }
 
-    const navigationItems = items.map(({ Link, Title }) => (
-        <li key={Link} className="inline-block hover:bg-gray-700 hover:text-white">
-            <a href={Link} className="block p-4">{Title}</a>
+    const navigationItems = items.map(({ link, title }) => (
+        <li key={link} className="inline-block hover:bg-gray-700 hover:text-white">
+            <Link href={link}>
+                <a className="block p-4">{title}</a>
+            </Link>
         </li>
     ));
 
