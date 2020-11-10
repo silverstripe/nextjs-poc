@@ -26,11 +26,11 @@ const Page = (props: Props) => {
 
     return <Outer>
         <Container>
-            <PageTitle>{page.Title}</PageTitle>
+            <PageTitle>{page.title}</PageTitle>
 
             <Typography>
-                {page.Content && <div dangerouslySetInnerHTML={{ __html: page.Content }}></div>}
-                {page.Blocks && page.Blocks.map((block: any) => {
+                {page.content && <div dangerouslySetInnerHTML={{ __html: page.content }}></div>}
+                {page.blocks && page.blocks.map((block: any) => {
                     const Component = getComponentForBlock(block.Component);
 
                     return <Component key={block.ID} {...block} />

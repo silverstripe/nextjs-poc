@@ -5,9 +5,9 @@ export const defaultContext: GlobalState = {
         navigation: [],
     },
     page: {
-        Type: 'Page',
-        Title: '',
-        Blocks: [],
+        __typename: 'Page',
+        title: '',
+        blocks: [],
     },
 };
 

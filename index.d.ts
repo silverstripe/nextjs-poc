@@ -4,29 +4,29 @@ declare module "*.svg" {
 }
 
 interface NavigationItem {
-  Title: string,
-  Link: string,
-  IsCurrent: boolean | null | undefined,
-  IsSection: boolean | null | undefined,
-  Children?: Array<NavigationItem>,
+  title: string,
+  link: string,
+  isCurrent: boolean | null | undefined,
+  isSection: boolean | null | undefined,
+  children?: Array<NavigationItem>,
 }
 
 interface BlogPost {
-  Title: string,
-  Link: string,
-  PublishDate: string,
-  Excerpt?: string,
-  FeaturedImage?: string,
+  title: string,
+  link: string,
+  publishDate: string,
+  excerpt?: string,
+  featuredImage?: string,
 }
 
 interface BlogSettings {
-  Pagination: PaginationSettings;
+  pagination: PaginationSettings;
 }
 
 interface PaginationSettings {
-  TotalPages: number,
-  Start: number,
-  PageLength: number,
+  totalPages: number,
+  start: number,
+  pageLength: number,
 }
 
 /**
@@ -37,12 +37,12 @@ interface GlobalState {
     navigation?: Array<NavigationItem>
   },
   page: {
-    Title: string,
-    Type: PageType,
-    Content?: string,
-    BlogPosts?: Array<BlogPost>,
-    BlogSettings?: BlogSettings,
-    Blocks?: Array,
+    title: string,
+    __typename: PageType,
+    content?: string,
+    blogPosts?: Array<BlogPost>,
+    blogSettings?: BlogSettings,
+    blocks?: Array,
   }
 }
 
