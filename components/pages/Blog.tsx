@@ -14,19 +14,19 @@ const Blog = () => {
     </Typography>;
 
     let blogPosts = null;
-    if (page.BlogPosts && page.BlogPosts.length > 0) {
-        blogPosts = page.BlogPosts.map(post => {
-            return <a href={post.Link} key={post.Link} className="border rounded shadow p-6">
+    if (page.blogPosts && page.blogPosts.length > 0) {
+        blogPosts = page.blogPosts.map(post => {
+            return <a href={post.link} key={post.link} className="border rounded shadow p-6">
                 <article className="md:flex">
                     <div className="md:flex-shrink-0">
-                        {post.FeaturedImage && <img src={post.FeaturedImage} alt={post.Title} className="rounded" />}
+                        {post.featuredImage && <img src={post.featuredImage} alt={post.title} className="rounded" />}
                     </div>
                     <div className="mt-4 md:mt-0 md:ml-6">
                         <header>
-                            <span className="text-sm">{post.PublishDate}</span>
-                            <h1 className="text-xl mt-2">{post.Title}</h1>
+                            <span className="text-sm">{post.publishDate}</span>
+                            <h1 className="text-xl mt-2">{post.title}</h1>
                         </header>
-                        {post.Excerpt && <p className="text-gray-700 mt-3">{post.Excerpt}</p>}
+                        {post.excerpt && <p className="text-gray-700 mt-3">{post.excerpt}</p>}
                     </div>
                 </article>
             </a >
@@ -39,7 +39,7 @@ const Blog = () => {
 
     return <Outer>
         <Container>
-            <PageTitle>{page.Title}</PageTitle>
+            <PageTitle>{page.title}</PageTitle>
             {blogPosts}
             {!blogPosts && emptyMessage}
         </Container>
