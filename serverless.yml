@@ -1,0 +1,7 @@
+ischommer-nextjs-poc:
+  component: "@sls-next/serverless-component"
+  inputs:
+    bucketName: 'my-namespace-nextjs-poc'
+    build:
+      env:
+        GRAPHQL_ENDPOINT_URL: http://my-endpoint/graphql

@@ -5,11 +5,11 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Set up backend
 
 This PoC requires a Silverstripe CMS installation with a certain GraphQL endpoint configuration.
-There's a separate [Backend PoC](https://github.com/silverstripeltd/nextjs-poc-backend) for this purpose.
+There's a separate [Backend PoC](https://github.com/silverstripe/nextjs-poc-backend) for this purpose.
 The easiest way to get it going is through [Lando](https://lando.dev).
 
 ```
-git clone https://github.com/silverstripeltd/nextjs-poc-backend
+git clone https://github.com/silverstripe/nextjs-poc-backend
 cd nextjs-poc-backend
 cp .env.example .env
 lando start
@@ -34,6 +34,37 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `pages/[[...slug]].js`. The page auto-updates as you edit the file.
 The GraphQL queries are in `lib/silverstripe.js`.
+
+## Serverless Deployment on AWS
+
+1. Install the Serverless framework
+
+```
+npm install -g serverless
+```
+
+2. Follow the [serverless-next](https://github.com/serverless-nextjs/serverless-next.js) instructions to configure your AWS credentials.
+   When using this with a Silverstripe Ltd. AWS account, you should use `aws-vault` instead of setting
+   your AWS credentials in an environment config.
+
+3. Adjust the namespace in `serverless.yml` (replace `my-namespace`)
+
+4. Adjust the CMS backend host name in `input.build.env` in `serverless.yml`.
+   If you're using the local Lando setup, you can use an [ngrok](https://ngrok.com) tunnel based on the local port mapping:
+   `ngrok http 123456`. The local port mapping is different for every Lando setup, use `lando info` to find the right port.
+
+
+5. Deploy!
+
+```
+serverless
+```
+
+For users of `aws-vault`, use the following instead:
+
+```
+aws-vault exec <my-aws-account> -- serverless
+```
 
 ## Learn More
 
