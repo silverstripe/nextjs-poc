@@ -19,7 +19,14 @@ lando sake dev/build
 You can now navigate the CMS at https://nextjs-poc-back.lndo.site/admin,
 and try out GraphQL queries at https://nextjs-poc-back.lndo.site/dev/graphql/ide.
 
-## Getting Started
+## Set up frontend
+
+Install NPM dependencies, and add default config:
+
+```
+yarn
+cp .env.example .env.local
+```
 
 If you haven't used Lando with the default host names,
 configure `GRAPHQL_ENDPOINT_URL` in `.env.local`.
