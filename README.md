@@ -35,6 +35,22 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `pages/[[...slug]].js`. The page auto-updates as you edit the file.
 The GraphQL queries are in `lib/silverstripe.js`.
 
+## Generating test data
+
+In order to create some test data to play with,
+you can use the [silverstripe/frameworktest](https://github.com/silverstripe/silverstripe-frameworktest)
+module. It generates 2000 pages by default, with between one and ten blocks on each page.
+In order to have some images to randomly associate with those blocks,
+we also generate some files and images first. 
+
+Caution: These tasks will take a few minutes to run.
+
+```
+cd nextjs-poc-backend
+lando sake dev/tasks/FTFileMakerTask
+lando sake dev/tasks/FTPageMakerTask withBlocks=1
+```
+
 ## Serverless Deployment on AWS
 
 1. Install the Serverless framework
