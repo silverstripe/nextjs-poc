@@ -1,0 +1,7 @@
+overwrite: true
+schema: "http://nextjs.local/graphql"
+generates:
+  graphql.d.ts:
+    plugins:
+      - "typescript"
+      - "typescript-operations"

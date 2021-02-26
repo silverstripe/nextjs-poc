@@ -1,17 +1,17 @@
-import React, { Fragment } from 'react';
+import React, { ReactNode } from 'react';
+import { BaseElement } from '../../graphql';
 
-interface Props {
-    ShowTitle: number;
-    Title: string;
-    HTML: string;
+interface Props extends BaseElement {
+    children: ReactNode,
 }
 
-const ContentBlock = (props: Props) => {
+const ContentBlock = (props: Props ) => {
+    const {_extend: {elementContent: {html}}} = props;
     return (
-        <Fragment>
-            {!!props.ShowTitle && <h2>{props.Title}</h2>}
-            <div dangerouslySetInnerHTML={{ __html: props.HTML }}></div>
-        </Fragment>
+        <>
+            {!!props.showTitle && <h2>{props.title}</h2>}
+            <div dangerouslySetInnerHTML={{ __html: html }}></div>
+        </>
     );
 }
 
