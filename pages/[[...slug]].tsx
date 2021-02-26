@@ -37,10 +37,11 @@ export async function getStaticProps({ params, preview = false }) {
 
     const link = slug.join('/');
 
-    const page = await getPageByLink(link, preview);
-
-    // TODO Don't query on each page fetch
-    const navigation = await getNavigation();
+    const [page, navigation] = await Promise.all([
+        getPageByLink(link, preview),
+        // TODO Don't query on each page fetch
+        await getNavigation()
+    ]);
 
     return {
         props: {
