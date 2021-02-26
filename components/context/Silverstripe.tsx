@@ -1,4 +1,5 @@
 import React from 'react';
+import { GlobalState } from '../..';
 
 export const defaultContext: GlobalState = {
     global: {
@@ -7,7 +8,6 @@ export const defaultContext: GlobalState = {
     page: {
         __typename: 'Page',
         title: '',
-        blocks: [],
     },
 };
 

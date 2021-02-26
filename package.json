@@ -6,7 +6,8 @@
     "dev": "next dev",
     "debug": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "graphqltypes": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
     "next": "^10.0.5",
@@ -17,9 +18,13 @@
     "tailwindcss": "^1.9.6"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "1.21.1",
+    "@graphql-codegen/typescript": "1.21.0",
+    "@graphql-codegen/typescript-operations": "^1.17.14",
     "@svgr/webpack": "^5.5.0",
     "@types/node": "^14.14.21",
     "@types/react": "^16.14.2",
+    "graphql": "^15.5.0",
     "typescript": "^3.9.5"
   }
 }

@@ -1,3 +1,5 @@
+import { Page } from "./graphql";
+
 declare module "*.svg" {
   const content: string;
   export default content;
@@ -36,13 +38,6 @@ interface GlobalState {
   global: {
     navigation?: Array<NavigationItem>
   },
-  page: {
-    title: string,
-    __typename: PageType,
-    content?: string,
-    blogPosts?: Array<BlogPost>,
-    blogSettings?: BlogSettings,
-    blocks?: Array,
-  }
+  page: Page
 }
 
